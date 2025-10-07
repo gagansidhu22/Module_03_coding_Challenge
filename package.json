@@ -21,5 +21,19 @@
         "ts-jest": "^29.3.4",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.3"
-    }
+    },
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gagansidhu22/Module_03_coding_Challenge.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/gagansidhu22/Module_03_coding_Challenge/issues"
+    },
+    "homepage": "https://github.com/gagansidhu22/Module_03_coding_Challenge#readme"
 }
