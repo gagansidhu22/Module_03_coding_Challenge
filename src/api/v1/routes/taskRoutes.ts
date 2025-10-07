@@ -1,8 +1,10 @@
 import express, { Router } from "express";
-import {} from "../controllers/taskController"
+import {createTask} from "../controllers/taskController"
+import {taskValidation} from "../validation/taskValidation"
+
 const router: Router = express.Router();
 
-router.get("/", )
+router.get("/", taskValidation, createTask)
 
 export default router;
 
