@@ -4,13 +4,39 @@ import { HTTP_STATUS } from "../../../constants/httpConstants";
 
 
 // create task
-export const createTask = async (req: Request, res: Response) => {
+// src/api/v1/controllers/taskController.ts
+
+import { Request, Response, NextFunction } from "express";
+
+import { HTTP_STATUS } from "../../../constants/httpConstants";
+
+import * as taskService from "../services/taskService";
+ 
+export const createTask = async (req: Request, res: Response, next: NextFunction) => {
+
   try {
-    const taskData = req.body;
-    const newTask = await taskService.createTask(taskData);
-    res.status(HTTP_STATUS.CREATED).json(newTask);
+
+    const task = await taskService.createTask(req.body);
+
+    return res.status(HTTP_STATUS.CREATED).json({
+
+      message: "Task has been created successfully",
+
+      data: task,
+
+    });
+
   } catch (error) {
-    console.error("Error creating task:", error);
-    res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ error: "Failed to create task" });
+
+    console.error("The Error creating task:", error);
+
+    return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+
+      error: "Failed to create task",
+
+    });
+
   }
+
 };
+ 
