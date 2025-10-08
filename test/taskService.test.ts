@@ -1,7 +1,7 @@
-import * as repo from "../../../../repository/firestoreRepository";
-import { createTask } from "../taskService";
+import * as repo from "../src/api/v1/repositories/firestoreRepository";
+import { createTask } from "../src/api/v1/services/taskService";
 
-jest.mock("../../../../repository/firestoreRepository");
+jest.mock("../src/api/v1/repositories/firestoreRepository");
 
 describe("taskService.createTask", () => {
   afterEach(() => jest.clearAllMocks());

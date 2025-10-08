@@ -1,10 +1,19 @@
 import { db } from "../../../../config/firebaseConfig";
-import { FirestoreDataTypes } from "../types/firestore";
+import { FieldValue, Timestamp } from "firebase-admin/firestore";
+
+type FirestoreDataTypes =
+    | string
+    | number
+    | boolean
+    | null
+    | Timestamp
+    | FieldValue;
 
 interface FieldValuePair {
     fieldName: string;
-    fieldValue: FirestoreDataTypes;
+    fieldValue: any;
 }
+
 
 
 /**
